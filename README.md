@@ -67,19 +67,21 @@ Without this automation, you’d have to request manually every day.
 eth-sepolia-faucet-automation/
 │
 ├─ src/
-│ ├─ main.py # Entry point: runs the faucet automation
-│ ├─ config.py # Configuration and .env variables
-│ └─ utils.py # Helpers: email, wait_for_status
+│ ├─ main.py          # Entry point: runs the faucet automation
+│ ├─ config.py        # Configuration and .env variables
+│ ├─ utils.py         # Helpers: email, wait_for_status
+│ └─ selectors.md     # Documentation of all Playwright selectors
 │
-├─ screenshots/ # Saved faucet result screenshots
-├─ chrome-data/ # Persistent Chrome user profile (Google login saved)
-├─ state.json # Saved Playwright session state
-├─ faucet.log # Logs of all runs
+├─ screenshots/       # Saved faucet result screenshots
+├─ chrome-data/       # Persistent Chrome user profile (Google login saved)
+├─ state.json         # Saved Playwright session state
+├─ faucet.log         # Logs of all runs
 │
-├─ .env # Your secrets (wallet address, email credentials)
-├─ .gitignore # Ignore sensitive/runtime files
-├─ requirements.txt # Python dependencies
-└─ README.md # This documentation
+├─ .env               # Your secrets (wallet address, email credentials)
+├─ .gitignore         # Ignore sensitive/runtime files
+├─ requirements.txt   # Python dependencies
+├─ LICENSE            # Project license (e.g., MIT)
+└─ README.md          # This documentation
 ```
 
 ---
