@@ -2,7 +2,7 @@
 
 This project is an **automation script** that automatically requests test ETH from the official [Google Cloud Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia).  
 
-Because faucets have a **24-hour cooldown**, this script is designed to run automatically (e.g., as a **cron job on Render**) every day, request Sepolia ETH to your wallet, and send you a confirmation email (with a screenshot) about the result.
+Because faucets have a **24-hour cooldown**, this script is designed to run automatically (e.g., with **Windows Task Scheduler**) every day, request Sepolia ETH to your wallet, and send you a confirmation email (with a screenshot) about the result.
 
 ---
 
@@ -58,7 +58,7 @@ Without this automation, you’d have to request manually every day.
 - **[python-dotenv](https://github.com/theskumar/python-dotenv)** → load secrets from `.env`  
 - **smtplib (built-in)** → send email reports  
 - **logging** → structured logging to console + `faucet.log`  
-- **cron job (Render)** → scheduled automation every 24h  
+- **Windows Task Scheduler** → run script automatically every 24h  
 
 ---
 
@@ -129,15 +129,25 @@ After that, your session is saved (`state.json`) and reused automatically.
 
 ---
 
-## ⏲️ Automation with Cron (Render example)
+## ⏲️ Automation with Windows Task Scheduler
 
-Since the faucet only works once every 24 hours, you can schedule this script as a cron job:
+Since the faucet only works once every 24 hours, you can automate this script with Task Scheduler:
 
-Render Cron Job example:
-```bash
-# Run every day at 09:00 UTC
-0 9 * * * cd /app && python src/main.py
-```
+- Open Task Scheduler (search in Start menu).
+
+- Click Create Basic Task → name it ETH Faucet Automation.
+
+- Choose Daily trigger → every 24 hours.
+
+- Action → Start a program.
+
+- Program: path to your python.exe (inside your venv).
+
+- Arguments: src\main.py
+
+- Start in: project root folder.
+
+- Save → Windows will now run the script daily.
 
 ---
 
