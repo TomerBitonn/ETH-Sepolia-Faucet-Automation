@@ -1,4 +1,4 @@
-# 🚰 Ethereum Sepolia Faucet Automation
+# Ethereum Sepolia Faucet Automation
 
 This project is an **automation script** that automatically requests test ETH from the official [Google Cloud Ethereum Sepolia Faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia).  
 
@@ -6,7 +6,7 @@ Because faucets have a **24-hour cooldown**, this script is designed to run auto
 
 ---
 
-## ✨ Why I built this
+## Why I built this
 When working with Ethereum smart contracts on **Sepolia Testnet**, you need **test ETH** to pay for gas fees.  
 Google provides a faucet, but it:
 - Requires you to be logged into a Google account.  
